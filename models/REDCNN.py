@@ -17,27 +17,27 @@ class REDCNN(nn.Module):
         #Contracting path:
         
         self.enc_1 = nn.Sequential(
-            nn.Conv3d(1, self.feature_maps, kernel_size = self.kernel_size, stride = self.feature_maps),
+            nn.Conv3d(1, self.feature_maps, kernel_size = self.kernel_size, stride = self.stride),
             nn.ReLU()
         )
         
         self.enc_2 = nn.Sequential(
-            nn.Conv3d(1, self.feature_maps, kernel_size = self.kernel_size, stride = self.feature_maps),
+            nn.Conv3d(self.feature_maps, self.feature_maps, kernel_size = self.kernel_size, stride = self.stride),
             nn.ReLU()
         )
         
         self.enc_3 = nn.Sequential(
-            nn.Conv3d(self.feature_maps, self.feature_maps, kernel_size = self.kernel_size, stride = self.feature_maps),
+            nn.Conv3d(self.feature_maps, self.feature_maps, kernel_size = self.kernel_size, stride = self.stride),
             nn.ReLU()
         )
         
         self.enc_4 = nn.Sequential(
-            nn.Conv3d(self.feature_maps, self.feature_maps, kernel_size = self.kernel_size, stride = self.feature_maps),
+            nn.Conv3d(self.feature_maps, self.feature_maps, kernel_size = self.kernel_size, stride = self.stride),
             nn.ReLU()
         )
         
         self.enc_5 = nn.Sequential(
-            nn.Conv3d(self.feature_maps, self.feature_maps, kernel_size = self.kernel_size, stride = self.feature_maps),
+            nn.Conv3d(self.feature_maps, self.feature_maps, kernel_size = self.kernel_size, stride = self.stride),
             nn.ReLU()
         )
 
