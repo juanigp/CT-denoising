@@ -4,12 +4,9 @@ import torch.nn as nn
 
 
 class REDCNN(nn.Module):
-    def __init__(self, cube_len=64):
+    def __init__(self):
         
         super(REDCNN, self).__init__()
-        
-        self.cube_len = cube_len
-        self.code_len = cube_len * 8
         self.feature_maps = 96
         self.kernel_size = 5
         self.stride = 1
