@@ -18,6 +18,10 @@ P_STRIDE = (10,20,20)
 FOLDER_PATCH = '19x39x39'
 P_SUBSTRINGS = ['360_FBPPhil','500FBPMedian','XCT']
 
+PATH_MASK = r'C:\Users\Juan Pisula\Desktop\ct_images\mask'
+PATH_SLICES = r'C:\Users\Juan Pisula\Desktop\ct_images\slices'
+PATH_PATCH = r'C:\Users\Juan Pisula\Desktop\ct_images\felix_patches'
+
 def box_positions(fnMask):
     imMask = volumeio.OpenXML(fnMask,kind='Mask',asNumpy=True)
     imMask = (imMask>0)*1 
@@ -35,7 +39,7 @@ def box_positions(fnMask):
     return np.where(imErode==1)
 
 def box_positions_folder(substring_mask = ''):
-    PATH_MASK = 'data/volumes/mask'    
+    #PATH_MASK = 'data/volumes/mask'    
     positions = []
     fnsMask = [f for f in os.listdir(PATH_MASK) if 
                f.find(substring_mask)>=0 or substring_mask=='']
@@ -56,8 +60,8 @@ def is_patch_valid(patch):
     return result
 
 def grab_and_store(positions,maskIDs,substring_slices = '',counter=0):     
-    PATH_PATCH = os.path.join('data/patches',FOLDER_PATCH)
-    PATH_SLICES = 'data/volumes/slices'
+    #PATH_PATCH = os.path.join('data/patches',FOLDER_PATCH)
+    #PATH_SLICES = 'data/volumes/slices'
     n = 0
     for i in range(len(positions)):
         n += len(positions[i][0])
@@ -87,7 +91,7 @@ def grab_and_store(positions,maskIDs,substring_slices = '',counter=0):
     return counter
 
 def delete_patches():
-    PATH_PATCH = os.path.join('data/patches',FOLDER_PATCH)
+    #PATH_PATCH = os.path.join('data/patches',FOLDER_PATCH)
     if os.path.exists(PATH_PATCH):
         shutil.rmtree(PATH_PATCH)
 
