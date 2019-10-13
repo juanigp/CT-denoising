@@ -281,14 +281,16 @@ def _createXMLTree(itk_volume):
     
     return header
 
-def SaveXMLFromNP(volume,filename=0,kind='Slices',addtitle=''):
+def SaveXMLFromNP(volume,filename=0,kind='Slices',addtitle='',spacing=(1,1,1)):
     if kind!='+Mask':
         itk_volume=sitk.GetImageFromArray(volume)
+        itk_volume.SetSpacing(spacing)
     else:
         itk_volume = (0,0)
         itk_volume[0] = sitk.GetImageFromArray(volume[0])
         itk_volume[1] = sitk.GetImageFromArray(volume[1])
-        
+        itk_volume[0].SetSpacing(spacing)
+        itk_volume[1].SetSpacing(spacing)
     return SaveXML(itk_volume,filename,kind,addtitle)
 
 def SaveXML(itk_volume,filename=0,kind='Slices',addtitle=''):
