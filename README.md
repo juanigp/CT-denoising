@@ -4,10 +4,11 @@ Directors: Claudio Delrieux PhD, Felix Thomsen PhD
 ## Notebooks:
  - __Hyperparameter_tuning.ipynb__: Training and testing of the proposed neural network with different values for learning rate and batch size.
  - __Hyperparameter_analysis.ipynb__: Visualization of the results obtained during tuning phase.
+ - __EDCNN_training.ipynb__: Training of the propsed Encoder Decoder CNN architecture.
+ - __Training results.ipynb__: Learning curves, denoised CT image
  
  __TODO__:
- - Train the model using the chosen hyperparameters.
- - Test
+ - See the changes in bone structural parameters
  - Compare with non deep learning denoising techniques.
 
 ![](https://github.com/juanigp/CT-denoising/blob/master/lr%20vs%20batch%20size.png )
