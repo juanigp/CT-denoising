@@ -7,9 +7,6 @@ Directors: Claudio Delrieux PhD, Felix Thomsen PhD
  - __EDCNN_training.ipynb__: Training of the propsed Encoder Decoder CNN architecture.
  - __Training results.ipynb__: Learning curves, denoised CT images
  
- __TODO__:
- - See changes in bone structural parameters
- 
 
 ![](https://raw.githubusercontent.com/juanigp/CT-denoising/master/pics/lr%20vs%20batch%20size.png )
 
